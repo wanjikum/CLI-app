@@ -5,14 +5,14 @@ import json
 class ToDoFunctions():
 	"""A class consumes api that uses http verbs"""
 	def create_task(self, data):
-		print("-*-" * 5 + "	Creating tasks" + "-*-" * 5)
+		print("-*-" * 5 + "Creating tasks" + "-*-" * 5)
 		resp = requests.post('http://jsonplaceholder.typicode.com/todos/', data=data) 
 		if resp.status_code == 201:
 			task_details = json.loads(resp.text)
 			print("Task {0} created successfully".format(task_details['title']))
 
 	def get_all_tasks(self):
-		print("-*-" * 5 + "	Getting tasks" + "-*-" * 5)
+		print("-*-" * 5 + "Getting tasks" + "-*-" * 5)
 		resp = requests.get('http://jsonplaceholder.typicode.com/todos/')
 		if resp.status_code != 200:
 			print("Something is not right")
