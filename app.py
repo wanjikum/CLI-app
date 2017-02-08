@@ -65,9 +65,9 @@ class ToDo(cmd.Cmd):
     @docopt_cmd
     def do_create_task(self, arg):
         """Usage: create_task <title>..."""
-        #title = " ".join(arg["<title>"])
-        #data = {}
-        function.create_task()
+        title = " ".join(arg["<title>"])
+        data = {'title' : title}
+        function.create_task(data)
         
 
     @docopt_cmd
