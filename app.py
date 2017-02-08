@@ -84,7 +84,10 @@ class ToDo(cmd.Cmd):
     @docopt_cmd
     def do_edit_task_details(self, arg):
         """Usage: edit_task_details <task_id> <title>..."""
-        function.edit_task_details()
+        task_id = arg["<task_id>"]
+        title = " ".join(arg["<title>"])
+        data = {'title': title}
+        function.edit_task_details(task_id, data)
 
     @docopt_cmd
     def do_mark_finished(self, arg):
