@@ -78,7 +78,8 @@ class ToDo(cmd.Cmd):
     @docopt_cmd
     def do_get_task_details(self, arg):
         """Usage: get_task_details <task_id>"""
-        function.get_task_details()
+        task_id = arg["<task_id>"]
+        function.get_task_details(task_id)
 
     @docopt_cmd
     def do_edit_task_details(self, arg):
