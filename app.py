@@ -92,7 +92,8 @@ class ToDo(cmd.Cmd):
     @docopt_cmd
     def do_mark_finished(self, arg):
         """Usage: mark_finished <task_id>"""
-        function.mark_finished()
+        task_id = arg["<task_id>"]
+        function.mark_finished(task_id)
 
     def do_quit(self, arg):
         """Quits out of Interactive Mode."""
