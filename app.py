@@ -17,6 +17,8 @@ import os
 import sys
 import cmd
 from docopt import docopt, DocoptExit
+from functions import ToDoFunctions
+function = ToDoFunctions()
 
 def docopt_cmd(func):
     """
@@ -62,29 +64,31 @@ class ToDo(cmd.Cmd):
 
     @docopt_cmd
     def do_create_task(self, arg):
-        """Usage: app.py create_task <title>..."""
-        pass
+        """Usage: create_task <title>..."""
+        #title = " ".join(arg["<title>"])
+        #data = {}
+        function.create_task()
         
 
     @docopt_cmd
     def do_get_all_tasks(self, arg):
         """Usage: get_all_tasks """
-        pass
+        function.get_all_tasks()
 
     @docopt_cmd
     def do_get_task_details(self, arg):
-        """Usage: app.py get_task_details <task_id>"""
-        pass
+        """Usage: get_task_details <task_id>"""
+        function.get_task_details()
 
     @docopt_cmd
-    def do_get_edit_task_details(self, arg):
-        """Usage: app.py edit_task_details <task_id> <title>..."""
-        pass
+    def do_edit_task_details(self, arg):
+        """Usage: edit_task_details <task_id> <title>..."""
+        function.edit_task_details()
 
     @docopt_cmd
     def do_mark_finished(self, arg):
-        """Usage: app.py mark_finished <task_id>"""
-        pass
+        """Usage: mark_finished <task_id>"""
+        function.mark_finished()
 
     def do_quit(self, arg):
         """Quits out of Interactive Mode."""
